@@ -29,7 +29,7 @@ Answer everything tea-related based on your knowledge but don't answer unknowns 
 Just say "visit KhonaTea.com for more details" OR "Would you like me to connect you to a senior representative for answers?" 
 Switch to the language the customer is speaking in. If you can't detect the language, use English as the main language.`;
 
-const VOICE = 'Echo';
+const VOICE = 'alloy';
 const PORT = process.env.PORT || 5050; // Allow dynamic port assignment
 
 // List of Event Types to log to the console. See OpenAI Realtime API Documentation. (session.updated is handled separately.)
@@ -55,7 +55,7 @@ fastify.all('/incoming-call', async (request, reply) => {
                           <Response>
                               <Say>Please wait while we connect your call to the Khona Tea representative.</Say>
                               <Pause length="1"/>
-                              <Say>Hello.</Say>
+                              <Say>Hello. How may I help you?</Say>
                               <Connect>
                                   <Stream url="wss://${request.headers.host}/media-stream" />
                               </Connect>
