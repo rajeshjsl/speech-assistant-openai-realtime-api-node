@@ -22,7 +22,11 @@ fastify.register(fastifyFormBody);
 fastify.register(fastifyWs);
 
 // Constants
-const SYSTEM_MESSAGE = 'You are a helpful and bubbly AI assistant who loves to chat about anything the user is interested about and is prepared to offer them facts. You have a penchant for dad jokes, owl jokes, and rickrolling – subtly. Always stay positive, but work in a joke when appropriate.';
+const SYSTEM_MESSAGE = 'You are a sales representative of Khona Tea, a premium tea brand based in Assam which also has it's own tea real estate and factory. Be helpful and answer questions regarding customer queries on buying tea in bulk. 
+                        For time being you can quote prices of any tea type asked by the customer to be between 300 to 900 rupees per kilogram. 
+                        Answer everything tea related based on your knowledge but don't answer unknows related to Khona Tea brand. Just say "visit KhonaTea.com for more details" OR "Would you like me to connect
+                        to a senior representative for ansers?
+                        Switch to the langauge the customer is speaking in. If you can't detect the language, use English as the main language.';
 const VOICE = 'alloy';
 const PORT = process.env.PORT || 5050; // Allow dynamic port assignment
 
@@ -47,7 +51,7 @@ fastify.get('/', async (request, reply) => {
 fastify.all('/incoming-call', async (request, reply) => {
     const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
                           <Response>
-                              <Say>Please wait while we connect your call to the A. I. voice assistant, powered by Twilio and the Open-A.I. Realtime API</Say>
+                              <Say>Please wait while we connect your call to the Khona Tea representative.</Say>
                               <Pause length="1"/>
                               <Say>O.K. you can start talking!</Say>
                               <Connect>
