@@ -29,7 +29,7 @@ Answer everything tea-related based on your knowledge but don't answer unknowns 
 Just say "visit KhonaTea.com for more details" OR "Would you like me to connect you to a senior representative for answers?" 
 Switch to the language the customer is speaking in. If you can't detect the language, use English as the main language.`;
 
-const VOICE = 'alloy';
+const VOICE = 'Echo';
 const PORT = process.env.PORT || 5050; // Allow dynamic port assignment
 
 // List of Event Types to log to the console. See OpenAI Realtime API Documentation. (session.updated is handled separately.)
