@@ -54,8 +54,7 @@ fastify.all('/incoming-call', async (request, reply) => {
     const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
                           <Response>
                               <Say>Please wait while we connect your call to the Khona Tea representative.</Say>
-                              <Pause length="1"/>
-                              <Say>O.K. you can start talking!</Say>
+                              <Pause length="1"/>                              
                               <Connect>
                                   <Stream url="wss://${request.headers.host}/media-stream" />
                               </Connect>
